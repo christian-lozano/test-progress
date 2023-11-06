@@ -4,6 +4,7 @@ import Stack from "@mui/material/Stack";
 
 export default function TableBlogLoading() {
   return (
+    // sad
     <Stack spacing={1}>
       <Skeleton variant="rectangular" height={40} />
       <Skeleton variant="rectangular" height={40} />
