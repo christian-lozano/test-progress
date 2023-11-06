@@ -25,7 +25,7 @@ export default function Index({post}) {
   const fetchData = async () => {
     setIsDataLoaded(false);
     //const conn = mysql.createConnection({yourHOST/USER/PW/DB});
-    const url = "http://localhost:3000/api/getallblogpost";
+    const url = `https://test-progress.vercel.app/api/getallblogpost`;
     axios
       .get(url)
       .then(function (response) {
@@ -40,7 +40,7 @@ export default function Index({post}) {
         // always executed
       });
 
-    fetch("http://localhost:3000/api/getallblogpost")
+    fetch("https://test-progress.vercel.app/api/getallblogpost")
       .then((response) => response.json())
       .then((data) => {
         console.log("fetchData", data);
@@ -53,7 +53,7 @@ export default function Index({post}) {
   //* A D D   R E C O R D
   const handleAddRecord = async () => {
     setIsDataLoaded(false);
-    fetch("http://localhost:3000/api/addblogpost", {
+    fetch("https://test-progress.vercel.app/api/addblogpost", {
       method: "POST",
       body: JSON.stringify({ title: title, body, body }),
     }).then((response) => {
@@ -66,7 +66,7 @@ export default function Index({post}) {
   const handleUpdateRecord = async (id, title, body) => {
     console.log("handleUpdateRecord", id, title, body);
     setIsDataLoaded(false);
-    fetch("http://localhost:3000/api/updateblogpost", {
+    fetch("https://test-progress.vercel.app/api/updateblogpost", {
       method: "POST",
       body: JSON.stringify({ id: id, title: title, body: body }),
     }).then((response) => {
@@ -79,7 +79,7 @@ export default function Index({post}) {
   const handleRemoveRecord = async (id) => {
     console.log("handleRemoveRecord", id);
     setIsDataLoaded(false);
-    fetch("http://localhost:3000/api/deleteblogpost", {
+    fetch("https://test-progress.vercel.app/api/deleteblogpost", {
       method: "POST",
       body: JSON.stringify({ id: id }),
     }).then((response) => {
